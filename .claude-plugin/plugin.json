@@ -1,0 +1,38 @@
+{
+  "name": "keep-going",
+  "version": "0.1.0",
+  "description": "Retries a turn that died on a transient API error (500, 529 overloaded, timeouts, connection resets) with backoff, and resumes work when the usage limit resets.",
+  "author": { "name": "Daniil Bystrov", "url": "https://github.com/Jvrd97" },
+  "homepage": "https://github.com/Jvrd97/claude-keep-going",
+  "repository": "https://github.com/Jvrd97/claude-keep-going",
+  "license": "MIT",
+  "keywords": ["mod", "retry", "api-error", "overloaded", "rate-limits", "auto-continue"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "maxRetries": {
+      "type": "number",
+      "title": "Retries in a row",
+      "description": "How many times in a row a turn that failed on a transient API error is retried (backoff 30s, 60s, 120s, 240s). A successful turn or anything you type resets the count.",
+      "default": 4
+    },
+    "maxPerSession": {
+      "type": "number",
+      "title": "Retries per session",
+      "description": "Hard cap on retries and resumes sent in one session.",
+      "default": 20
+    },
+    "resumeAfterLimit": {
+      "type": "boolean",
+      "title": "Resume after the usage limit resets",
+      "description": "When a turn stops on the 5-hour or weekly limit, send a resume prompt one minute after the window resets.",
+      "default": true
+    },
+    "display": {
+      "type": "string",
+      "title": "Where to show a pending retry",
+      "description": "band draws a row with a countdown and a cancel button above the prompt; status writes the countdown to the status line.",
+      "default": "band",
+      "options": ["band", "status"]
+    }
+  }
+}

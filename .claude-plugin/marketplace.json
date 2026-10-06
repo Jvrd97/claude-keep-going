@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "keep-going",
+  "description": "keep-going: automatic retry after transient API errors and resume after the usage limit resets, for Claude Code",
+  "owner": { "name": "Daniil Bystrov", "url": "https://github.com/Jvrd97" },
+  "plugins": [
+    {
+      "name": "keep-going",
+      "description": "Retries a turn that died on a transient API error with backoff, and resumes work when the usage limit resets.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/Jvrd97/claude-keep-going"
+    }
+  ]
+}
