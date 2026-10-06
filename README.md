@@ -12,9 +12,9 @@ keep-going: not retrying: authentication failed.
 
 Long sessions die on errors that would have passed a minute later, and the work then sits until a person comes back:
 
-- The 2026 wave of API errors: [#46987](https://github.com/anthropics/claude-code/issues/46987), [#62123](https://github.com/anthropics/claude-code/issues/62123) and [#69238](https://github.com/anthropics/claude-code/issues/69238), about 1.9k 👍 and 2.3k comments across the group. Stream idle timeouts, 529 overloaded, 500s and connection resets end the turn, and someone has to type "continue".
+- The 2026 wave of API errors: [#46987](https://github.com/anthropics/claude-code/issues/46987), [#62123](https://github.com/anthropics/claude-code/issues/62123) and [#69238](https://github.com/anthropics/claude-code/issues/69238), about 400 👍 and 300 comments together (checked 2026-10-06). Stream idle timeouts, 529 overloaded, 500s and connection resets end the turn, and someone has to type "continue".
 - Reddit: ["API Error: 500 again"](https://www.reddit.com/r/ClaudeCode/comments/1sm867b/), at least 990 upvotes.
-- Auto-continue after the limit reset: [#13354](https://github.com/anthropics/claude-code/issues/13354), 311 👍. When the 5-hour window runs out at night, nothing resumes the task at the reset.
+- Auto-continue after the limit reset: [#13354](https://github.com/anthropics/claude-code/issues/13354), 208 👍. When the 5-hour window runs out at night, nothing resumes the task at the reset.
 
 Claude Code already retries a single request several times. keep-going works one level up: when the whole turn has failed, it waits and asks the model to continue from where it stopped.
 
